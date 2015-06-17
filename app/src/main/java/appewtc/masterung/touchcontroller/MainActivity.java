@@ -1,5 +1,6 @@
 package appewtc.masterung.touchcontroller;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     buttonImageView.setImageAlpha(100);
+                    soundEffect();
                 }
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     buttonImageView.setImageAlpha(255);
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     rightImageView.setImageAlpha(100);
+                    soundEffect();
                 }
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     rightImageView.setImageAlpha(255);
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     leftImageView.setImageAlpha(100);
+                    soundEffect();
                 }
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     leftImageView.setImageAlpha(255);
@@ -91,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
                     topImageView.setImageAlpha(100);
 
+                    soundEffect();
+
                 }
 
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
@@ -105,6 +111,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }   //top
+
+    private void soundEffect() {
+        MediaPlayer mySound = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
+        mySound.start();
+    }
+
 
     private void bindWidget() {
 
