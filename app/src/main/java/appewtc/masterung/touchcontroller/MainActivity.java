@@ -4,13 +4,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Explicit
+    private ImageView topImageView, leftImageView,
+            rightImageView, buttonImageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Bind Widget
+        bindWidget();
+
+    }   // onCreate
+
+    private void bindWidget() {
+
+        topImageView = (ImageView) findViewById(R.id.imvTop);
+        leftImageView = (ImageView) findViewById(R.id.imvleft);
+        rightImageView = (ImageView) findViewById(R.id.imvRight);
+        buttonImageView = (ImageView) findViewById(R.id.imvButton);
+
     }
 
     @Override
@@ -34,4 +53,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+}   //Main Class
